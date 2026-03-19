@@ -6,12 +6,12 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v4
-      - name: run tests
+      - name: setup node
         uses: actions/setup-node@v6
         with:
           node-version: 18
       - name: install dependencies
-        run: npm ci
+        run: npm install
       - name: run tests
         run: npm test
 
