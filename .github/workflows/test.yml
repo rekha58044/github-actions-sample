@@ -20,8 +20,16 @@ jobs:
       - name: run tests
         run: npm test
         working-directory: ./02 Starting Project
-  message:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: message
-        run: echo "tests completed"
+      - name: checkout code
+        uses: actions/checkout@v4
+      - name: install dependencies
+        run: npm install
+        working-directory: ./02 Starting Project
+      - name: build
+        run: npm build
+        working-directory: ./02 Starting Project
+      - name: print message
+        run: echo "deploying......."
