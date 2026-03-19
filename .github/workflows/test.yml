@@ -1,19 +1,22 @@
 name: first-workflow
 on: push
+
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - name: Get code
         uses: actions/checkout@v4
+
       - name: setup node
         uses: actions/setup-node@v6
         with:
           node-version: 18
+
       - name: install dependencies
         run: npm install
         working-directory: ./02 Starting Project
+
       - name: run tests
         run: npm test
-
-            
+        working-directory: ./02 Starting Project
