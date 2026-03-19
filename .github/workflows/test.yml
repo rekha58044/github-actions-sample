@@ -33,7 +33,7 @@ jobs:
         run: npm install
         working-directory: ./02 Starting Project
       - name: build
-        run: npm build
+        run: npm run build
         working-directory: ./02 Starting Project
       - name: print message
         run: echo "deploying......."
